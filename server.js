@@ -6,14 +6,27 @@
 const express = require("express");
 const app = express();
 
+app.set("view engine", "pug");
+app.set("views", "./views");
+var todos = [
+  { id: 1, name: "Đi chợ" },
+  { id: 2, name: "Nấu cơm" },
+  { id: 3, name: "Rửa bát" },
+  { id: 4, name: "Học code tại CodersX" }
+];
 // https://expressjs.com/en/starter/basic-routing.html
-app.get("/", (request, response) => {
-  response.send("I love CodersX");
-});
-app.get("/todos", (request, response) => {
-  response.send(
-    "<ul><li>Đi chợ</li><li>Nấu cơm</li><li>Rửa bát</li><li>Học code tại CodersX</li</ul>"
+app.get('/',(req,res)=>res.render('todos/index',{
+    todos: todos
+}));
+
+app.get("/todos", (req, res) => {
+  var q = req.query.q;
+  var matchedUsers = todos.filter(
+    todo => todo.name.toLowerCase().indexOf(q.toLowerCase()) !== -1
   );
+  res.render("todos/index", {
+    todos: matchedUsers
+  });
 });
 
 // listen for requests :)

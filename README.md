@@ -1,7 +1,9 @@
-# Description Bai 1: Hello Coders.Tokyo
-## What to do
-- Remix project: https://glitch.com/~codersx-express-lesson1
-- Thêm một route: /todos trả về một danh sách các việc phải làm (dùng thẻ ul, li) 
+# Bai3 Query parameters
+## What to do 3.2
+- Tạo một form có chứa một text box (dùng thẻ input) và một nút search
+- Đặt attribute name cho input nhận giá trị q
+- Khi ấn nút search thì form sẽ được gửi với method là GET tới /todos
+
 
 # hello-express
 
