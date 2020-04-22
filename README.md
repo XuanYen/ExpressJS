@@ -1,10 +1,8 @@
-# Bai3 Query parameters
-## What to do 3.2
-- Tạo một form có chứa một text box (dùng thẻ input) và một nút search
-- Đặt attribute name cho input nhận giá trị q
-- Khi ấn nút search thì form sẽ được gửi với method là GET tới /todos
-
-
+# Bai4. Post method
+## What to do
+1) Tạo một form khác trong cùng page chứa 1 input với name=todo, nút Create
+2) Khi nhấn Create, form sẽ được gửi theo method POST tới /todos/create
+3) Tạo route /todos/create, khi có POST request gửi lên thì tạo một todo mới và cho vào danh sách, sau đó quay lại trang trước
 # hello-express
 
 A server that serves a webpage, its resources, and some data
