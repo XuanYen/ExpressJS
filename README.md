@@ -1,8 +1,7 @@
-# Description Bai 1: Hello Coders.Tokyo
+# Bai2 Template engines
 ## What to do
-- Remix project: https://glitch.com/~codersx-express-lesson1
-- Thêm một route: /todos trả về một danh sách các việc phải làm (dùng thẻ ul, li) 
-
+ Sử dụng pug template để viết lại route /todos
+ 
 # hello-express
 
 A server that serves a webpage, its resources, and some data
