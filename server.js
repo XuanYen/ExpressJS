@@ -15,9 +15,9 @@ var todos = [
   { id: 4, name: "Học code tại CodersX" }
 ];
 // https://expressjs.com/en/starter/basic-routing.html
-app.get("/", (request, response) => {
-  response.send("I love CodersX");
-});
+app.get('/',(req,res)=>res.render('todos/index',{
+    todos: todos
+}));
 
 app.get("/todos", (req, res) => {
   var q = req.query.q;

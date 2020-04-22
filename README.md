@@ -1,7 +1,9 @@
-# Bai 3. Query parameters
-## What to do
-- Thay đổi URL thành /todos?q=nấu (
-- Thay đổi code để giới hạn danh sách TODO lại chỉ còn những item match với từ khoá tìm kiếm nấu ở URL (không phân biệt hoa thường)
+# Bai3 Query parameters
+## What to do 3.2
+- Tạo một form có chứa một text box (dùng thẻ input) và một nút search
+- Đặt attribute name cho input nhận giá trị q
+- Khi ấn nút search thì form sẽ được gửi với method là GET tới /todos
+
 
 # hello-express
 
