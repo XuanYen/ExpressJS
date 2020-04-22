@@ -5,14 +5,17 @@
 // but feel free to use whatever libraries or frameworks you'd like through `package.json`.
 const express = require("express");
 const app = express();
+const bodyParser = require('body-parser');
 
 app.set("view engine", "pug");
 app.set("views", "./views");
+app.use(bodyParser.json()) // for parsing application/json
+app.use(bodyParser.urlencoded({ extended: true })) // for parsing application/x-www-form-urlencoded
 var todos = [
-  { id: 1, name: "Đi chợ" },
-  { id: 2, name: "Nấu cơm" },
-  { id: 3, name: "Rửa bát" },
-  { id: 4, name: "Học code tại CodersX" }
+  { id: 1, todo: "Đi chợ" },
+  { id: 2, todo: "Nấu cơm" },
+  { id: 3, todo: "Rửa bát" },
+  { id: 4, todo: "Học code tại CodersX" }
 ];
 // https://expressjs.com/en/starter/basic-routing.html
 app.get('/',(req,res)=>res.render('todos/index',{
@@ -29,6 +32,11 @@ app.get("/todos", (req, res) => {
   });
 });
 
+app.get("/todos/create",(req,res)=>res.render("todos/create"));
+app.post("/todos/create",(req,res)=>{
+  todos.push(req.body);
+  res.redirect('/');
+})
 // listen for requests :)
 app.listen(process.env.PORT, () => {
   console.log("Server listening on port " + process.env.PORT);

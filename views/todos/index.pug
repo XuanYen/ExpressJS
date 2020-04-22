@@ -1,7 +1,9 @@
+a(href="/todos/create") New
+
 form(action="/todos", method="GET")
   input(type="text", name="q")
   button Search
 
 ul
   each todo in todos
-   li= todo.name
+   li=todo.todo
