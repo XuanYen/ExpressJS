@@ -1,7 +1,8 @@
-# Bai2 Template engines
+# Bai 3. Query parameters
 ## What to do
- Sử dụng pug template để viết lại route /todos
- 
+- Thay đổi URL thành /todos?q=nấu (
+- Thay đổi code để giới hạn danh sách TODO lại chỉ còn những item match với từ khoá tìm kiếm nấu ở URL (không phân biệt hoa thường)
+
 # hello-express
 
 A server that serves a webpage, its resources, and some data
