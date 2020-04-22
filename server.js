@@ -11,15 +11,17 @@ app.set("view engine", "pug");
 app.set("views", "./views");
 app.use(bodyParser.json()) // for parsing application/json
 app.use(bodyParser.urlencoded({ extended: true })) // for parsing application/x-www-form-urlencoded
-var todos = [
-  { id: 1, todo: "Đi chợ" },
-  { id: 2, todo: "Nấu cơm" },
-  { id: 3, todo: "Rửa bát" },
-  { id: 4, todo: "Học code tại CodersX" }
-];
+
+const low = require('lowdb')
+const FileSync = require('lowdb/adapters/FileSync')
+ 
+const adapter = new FileSync('db.json')
+const db = low(adapter)
+db.defaults({ todos: []})
+  .write()
 // https://expressjs.com/en/starter/basic-routing.html
 app.get('/',(req,res)=>res.render('todos/index',{
-    todos: todos
+    todos: db.get('todos').value()
 }));
 
 app.get("/todos", (req, res) => {
@@ -34,7 +36,7 @@ app.get("/todos", (req, res) => {
 
 app.get("/todos/create",(req,res)=>res.render("todos/create"));
 app.post("/todos/create",(req,res)=>{
-  todos.push(req.body);
+  db.get('todos').push(req.body).write()
   res.redirect('/');
 })
 // listen for requests :)
