@@ -1,8 +1,17 @@
-# Bai4. Post method
+# Bai 6. Tich hop database (lowdb)
 ## What to do
-1) Tạo một form khác trong cùng page chứa 1 input với name=todo, nút Create
-2) Khi nhấn Create, form sẽ được gửi theo method POST tới /todos/create
-3) Tạo route /todos/create, khi có POST request gửi lên thì tạo một todo mới và cho vào danh sách, sau đó quay lại trang trước
+1) Thêm một file db.json vào project với nội dung như sau:
+
+{
+  "todos": [
+    { "id": 1, "text": "blah" }
+  ]
+}
+
+2) Sử dụng lowdb thay cho việc hard-code một array như các bài trước
+Lưu ý: Khi thay đổi data type, bạn cần update lại những đoạn code consume data đó
+
+
 # hello-express
 
 A server that serves a webpage, its resources, and some data
